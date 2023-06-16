@@ -14,6 +14,3 @@ class ProductionLineSimulation:
     def process_product(self, product):
         for workstation in self.layout:
             workstation.process_product(product)
-    #
-    # def calculate_fitness(self):
-    #     pass

@@ -1,7 +1,8 @@
 import random
+from time import sleep
 
 NUM_MACHINES = 5
-NUM_PRODUCTS = 10
+NUM_PRODUCTS = 3
 
 class Optimization:
     def __init__(self, initial_layout):
@@ -13,9 +14,12 @@ class Optimization:
 
         # Simulate production line
         for product in range(NUM_PRODUCTS):
+            print(f"Product {product} is being processing...")
             for machine_idx, machine_id in enumerate(layout):
                 # Perform operation on the machine
+                print(f"Machine {machine_id} is processing product {product}")
                 machine_states[machine_idx] += machine_id
+            print(f"{product} finished processing")
 
         return machine_states
 

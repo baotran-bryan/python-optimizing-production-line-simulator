@@ -9,10 +9,12 @@ if __name__ == "__main__":
     initial_fitness = optimizer.evaluate_layout(initial_layout)
     print("Initial Layout:", initial_layout)
     print("Initial Fitness:", initial_fitness)
-
+    print("Initial Fitness------------:")
     # Optimize the layout using genetic algorithm
     optimized_layout = optimizer.optimize_layout()
     optimized_fitness = optimizer.evaluate_layout(optimized_layout)
 
+    print("Initial Layout:", initial_layout)
+    print("Initial Fitness:", initial_fitness)
     print("Optimized Layout:", optimized_layout)
     print("Optimized Fitness:", optimized_fitness)
