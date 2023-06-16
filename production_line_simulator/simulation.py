@@ -1,4 +1,4 @@
-from product import Product
+from .product import Product
 
 
 class ProductionLineSimulation:
@@ -9,7 +9,11 @@ class ProductionLineSimulation:
         for i in range(num_products):
             product = Product(i)
             self.process_product(product)
+        return range(num_products)
 
     def process_product(self, product):
         for workstation in self.layout:
             workstation.process_product(product)
+    #
+    # def calculate_fitness(self):
+    #     pass

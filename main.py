@@ -1,15 +1,18 @@
-from machine import Machine
-from product import Product
-from simulation import ProductionLineSimulation
+from production_line_simulator.optimization import Optimization
 
-# Define the production line layout
-workstation1 = Machine("Machine 1", 2)
-workstation2 = Machine("Machine 2", 3)
-workstation3 = Machine("Machine 3", 2)
-layout = [workstation1, workstation2, workstation3]
+if __name__ == "__main__":
+    initial_layout = [1, 2, 3, 4, 5]  # Example: Machines represented by integers
 
-# Create a digital twin simulation instance
-simulation = ProductionLineSimulation(layout)
+    optimizer = Optimization(initial_layout)
 
-# Run the simulation
-simulation.run_simulation(10)
+    # Simulate and evaluate the initial layout
+    initial_fitness = optimizer.evaluate_layout(initial_layout)
+    print("Initial Layout:", initial_layout)
+    print("Initial Fitness:", initial_fitness)
+
+    # Optimize the layout using genetic algorithm
+    optimized_layout = optimizer.optimize_layout()
+    optimized_fitness = optimizer.evaluate_layout(optimized_layout)
+
+    print("Optimized Layout:", optimized_layout)
+    print("Optimized Fitness:", optimized_fitness)
